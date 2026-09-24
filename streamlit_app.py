@@ -2,12 +2,12 @@ import uuid
 import pandas as pd
 import streamlit as st
 
-from app.versioning import create_prompt, create_new_version, list_prompts, list_versions
-from app.routing import assign_version
-from app.llm_client import run_prompt_version
-from app.evaluation import score_basic
-from app.experiments import create_experiment, list_experiments, log_result, get_results
-from app.stats_utils import check_significance
+from versioning import create_prompt, create_new_version, list_prompts, list_versions
+from routing import assign_version
+from llm_client import run_prompt_version
+from evaluation import score_basic
+from experiments import create_experiment, list_experiments, log_result, get_results
+from stats_utils import check_significance
 
 st.set_page_config(page_title="Prompt A/B Platform", layout="wide")
 

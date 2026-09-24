@@ -1,4 +1,4 @@
-from app.llm_client import _model
+from llm_client import _model
 
 
 def score_basic(output: str) -> float:

@@ -1,11 +1,14 @@
 import os
 import time
+from pathlib import Path
+
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-load_dotenv()
+PROJECT_ROOT = Path(__file__).resolve().parent
+load_dotenv(PROJECT_ROOT / ".env")
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-_model = genai.GenerativeModel("gemini-1.5-flash")
+_model = genai.GenerativeModel(os.getenv("GEMINI_MODEL", "gemini-3.6-flash"))
 
 
 def run_prompt_version(prompt_template: str, user_input: str) -> dict:
